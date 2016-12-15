@@ -224,6 +224,8 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 }
 
 + (void)showWithStatus:(NSString*)status {
+    //This line below is added to disable user Interaction when loader is shown
+    [self setDefaultMaskType:SVProgressHUDMaskTypeGradient];
     [self showProgress:SVProgressHUDUndefinedProgress status:status];
 }
 
