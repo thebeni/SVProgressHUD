@@ -224,7 +224,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 }
 
 + (void)showWithStatus:(NSString*)status {
-    //This line below is added to disable user Interaction when loader is shown
+    //This line below is added to disable user Interaction while loader is shown
     [self setDefaultMaskType:SVProgressHUDMaskTypeGradient];
     [self showProgress:SVProgressHUDUndefinedProgress status:status];
 }
@@ -363,7 +363,9 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
         self.backgroundView.alpha = 0.0f;
         
         _backgroundColor = [UIColor clearColor];
-        _foregroundColor = [UIColor blackColor];
+        //_foregroundColor = [UIColor blackColor];
+        //need a custom color
+        _foregroundColor = [UIColor colorWithRed:64/255.0 green:200/255.0 blue:112/255.0 alpha:1.0];
         _backgroundLayerColor = [UIColor colorWithWhite:0 alpha:0.4];
         
         // Set default values
